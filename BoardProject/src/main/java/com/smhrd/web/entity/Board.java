@@ -31,6 +31,9 @@ public class Board {
 	@Column(updatable = false)
 	private String b_writer;
 	
+	@Column(length = 2000)
+	private String b_file_path; // 파일 경로를 저장하는 컬럼 추가
+	
 	@JsonFormat(pattern="yyyy-MM-dd") // ex 2025-12-23 15:47"35 -> 2025-12-23 으로 변환
 	@Column(insertable = false, updatable = false, columnDefinition="datatime default now()")
 	private LocalDateTime b_datetime;
